@@ -1,0 +1,139 @@
+﻿<Window x:Class="LastStand.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:my="clr-namespace:LastStand"
+        xmlns:bus="clr-namespace:LastStand.Business"
+    Title="Last Stand Power Editor" Height="500" Width="700" Loaded="Window_Loaded" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="5">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save" Tag="Save" Click="Item_Click" />
+                <MenuItem Header="_Exit" Tag="Exit" Click="Item_Click" />
+            </MenuItem>
+            <MenuItem Header="Full Power List" Tag="FullPowerList" Click="Item_Click" />
+        </Menu>
+        <TextBlock Text="Invaders" Margin="2" Grid.Row="1" />
+        <Button Grid.Row="1" HorizontalAlignment="Right" Tag="DelInvader" Width="40" Click="Item_Click">Delete</Button>
+        <Button Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,45,0" Tag="NewInvader" Width="40" Click="Item_Click">New</Button>
+        <ListBox Grid.Row="2" ItemsSource="{Binding Path=Invaders}" DisplayMemberPath="Name" SelectedItem="{Binding Path=CurrentInvader}" SelectionMode="Single" />
+        <TabControl Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+            <TabControl.Template>
+                <ControlTemplate TargetType="TabControl">
+                    <DockPanel LastChildFill="True">
+                        <Grid DockPanel.Dock="Top" IsItemsHost="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <ContentPresenter ContentSource="SelectedContent"/>
+                    </DockPanel>
+                </ControlTemplate>
+            </TabControl.Template>
+            <TabItem Header="Details" Grid.Column="0">
+                <Grid>
+                    <Grid.Resources>
+                        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="odp">
+                            <ObjectDataProvider.MethodParameters>
+                                <x:Type TypeName="bus:InvaderType"/>
+                            </ObjectDataProvider.MethodParameters>
+                        </ObjectDataProvider>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Name" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox x:Name="tbName" HorizontalAlignment="Left" Width="150" Grid.Column="1" Text="{Binding Path=CurrentInvader.Name}" KeyUp="TextBox_KeyUp" Margin="2" />
+                    <TextBlock Text="Type" Grid.Row="1" Margin="2" HorizontalAlignment="Right" />
+                    <ComboBox HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" SelectedValue="{Binding Path=CurrentInvader.Type}" ItemsSource="{Binding Source={StaticResource odp}, Mode=OneTime}" Margin="2" >
+                    </ComboBox>
+                    <TextBlock Text="Vermin HP" Grid.Row="2" Visibility="{Binding Path=CurrentInvader.VerminStatVisibility, Mode=OneWay}" Margin="2" HorizontalAlignment="Right" />
+                    <xctk:IntegerUpDown Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"  Value="{Binding Path=CurrentInvader.VermHP}" Visibility="{Binding Path=CurrentInvader.VerminStatVisibility, Mode=OneWay}" Margin="2" />
+                    <TextBlock Text="Group Size" Grid.Row="3" Visibility="{Binding Path=CurrentInvader.VerminStatVisibility, Mode=OneWay}" Margin="2" HorizontalAlignment="Right" />
+                    <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Visibility="{Binding Path=CurrentInvader.VerminStatVisibility, Mode=OneWay}" Margin="2">
+                        <xctk:IntegerUpDown HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Value="{Binding Path=CurrentInvader.VermGroupLow}" />
+                        <TextBlock Text="-" Grid.Row="3" Grid.Column="1" />
+                        <xctk:IntegerUpDown HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Value="{Binding Path=CurrentInvader.VermGroupHigh}" />
+                    </StackPanel>
+                    <TextBlock Text="Stat 1" Grid.Row="4" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox HorizontalAlignment="Left" Width="150" Grid.Row="4" Grid.Column="4" Text="{Binding Path=CurrentInvader.Stat1.Name}" KeyUp="TextBox_KeyUp" Margin="2" />
+                    <xctk:IntegerUpDown Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Path=CurrentInvader.Stat1.Value}" Margin="155,2,2,2" />
+                    <TextBlock Text="Stat 2" Grid.Row="5" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox HorizontalAlignment="Left" Width="150" Grid.Row="5" Grid.Column="1" Text="{Binding Path=CurrentInvader.Stat2.Name}" KeyUp="TextBox_KeyUp" Margin="2" />
+                    <xctk:IntegerUpDown Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Path=CurrentInvader.Stat2.Value}" Margin="155,2,2,2" />
+                    <TextBlock Text="Stat 3" Grid.Row="6" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox HorizontalAlignment="Left" Width="150" Grid.Row="6" Grid.Column="1" Text="{Binding Path=CurrentInvader.Stat3.Name}" KeyUp="TextBox_KeyUp" Margin="2" />
+                    <xctk:IntegerUpDown Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Path=CurrentInvader.Stat3.Value}" Margin="155,2,2,2" />
+                    <TextBlock Text="Stat 4" Grid.Row="7" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox HorizontalAlignment="Left" Width="150" Grid.Row="7" Grid.Column="1" Text="{Binding Path=CurrentInvader.Stat4.Name}" KeyUp="TextBox_KeyUp" Margin="2" />
+                    <xctk:IntegerUpDown Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Path=CurrentInvader.Stat4.Value}" Margin="155,2,2,2" />
+                    <TextBlock Text="Power" Grid.Row="8" Margin="2" HorizontalAlignment="Right" />
+                    <xctk:IntegerUpDown Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" Value="{Binding Path=CurrentInvader.Power}" Margin="2,2,2,2" />
+                    <TextBlock Text="Flavor" Grid.Row="9" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox x:Name="tbFlavorText" HorizontalAlignment="Stretch" Grid.Row="9" Grid.Column="1" Text="{Binding Path=CurrentInvader.FlavorText}" KeyUp="TextBox_KeyUp" TextWrapping="Wrap" AcceptsReturn="True" Margin="2" />
+                    <TextBlock Text="Rules" Grid.Row="10" Margin="2" HorizontalAlignment="Right" />
+                    <TextBox x:Name="tbRulesText" HorizontalAlignment="Stretch" Grid.Row="10" Grid.Column="1" Text="{Binding Path=CurrentInvader.RulesText}" KeyUp="TextBox_KeyUp" TextWrapping="Wrap" AcceptsReturn="True" Margin="2" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Powers" Grid.Column="1">
+                <my:PowerEditor x:Name="powerEditor1" />
+            </TabItem>
+            <TabItem Header="Encounter" Grid.Column="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Content="&gt;&gt;" Tag="AddEnc"  Click="Item_Click" />
+                    <Button Grid.Row="3" Content="&lt;&lt;" Tag="RemEnc" Click="Item_Click" />
+                    <Button Grid.Row="5" Content="Print" Tag="PrintEnc" Click="Item_Click" />
+                    <Button Grid.Row="7" Content="Clear All" Tag="ClearEnc" Click="Item_Click" />
+                    <ListBox Grid.RowSpan="9" Grid.Column="1" ItemsSource="{Binding Path=Encounter}" SelectionMode="Single" DisplayMemberPath="Invader.Name" SelectedItem="{Binding Path=CurrentEncInvader}" />
+                    <CheckBox Grid.Column="1" Margin="5,0,0,0" Grid.Row="9" Content="Print duplicate invader stat blocks" IsChecked="{Binding Path=PrintDuplicates}" />
+                    <CheckBox Grid.Column="1" Margin="5,0,0,0" Grid.Row="10" Content="Print flavor text" IsChecked="{Binding Path=PrintFlavor}" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

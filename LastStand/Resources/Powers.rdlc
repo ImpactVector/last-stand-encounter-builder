@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="LastStandPrintBusiness">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>6d3d1602-0a55-4d65-bfd7-5f0aa1533078</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="InvaderName">
+          <DataField>InvaderName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Keywords">
+          <DataField>Keywords</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Stat">
+          <DataField>Stat</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Text">
+          <DataField>Text</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>LastStandPrintBusiness</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>LastStandPrint.Business</rd:DataSetName>
+        <rd:TableName>PowerDataList</rd:TableName>
+        <rd:ObjectDataSourceType>LastStandPrint.Business.PowerDataList, LastStandPrint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix5">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.5in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.625in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle6">
+                      <ReportItems>
+                        <Rectangle Name="Rectangle7">
+                          <ReportItems>
+                            <Rectangle Name="Rectangle8">
+                              <ReportItems>
+                                <Textbox Name="Textbox4">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Text.Value</Value>
+                                          <Style>
+                                            <FontSize>=iif(len(me.Value)&gt;450,"5pt",iif(len(me.Value)&gt;350,"6pt",iif(len(me.Value)&gt;250,"7pt","8pt")))</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>0.58473in</Top>
+                                  <Left>0.20487in</Left>
+                                  <Height>0.92527in</Height>
+                                  <Width>2.19513in</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <PaddingLeft>1pt</PaddingLeft>
+                                    <PaddingRight>1pt</PaddingRight>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox5">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Keywords.Value</Value>
+                                          <Style>
+                                            <FontStyle>Italic</FontStyle>
+                                            <FontSize>8pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Left</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>0.42501in</Top>
+                                  <Left>0.20487in</Left>
+                                  <Height>0.15972in</Height>
+                                  <Width>2.19513in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>1pt</PaddingLeft>
+                                    <PaddingRight>1pt</PaddingRight>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox3">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!InvaderName.Value + iif(Fields!Type.Value="Ripped"," (" + Fields!Stat.Value + ")","")</Value>
+                                          <Style>
+                                            <FontSize>8pt</FontSize>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox3</rd:DefaultName>
+                                  <Top>0.24445in</Top>
+                                  <Left>0.19098in</Left>
+                                  <Height>0.18056in</Height>
+                                  <Width>2.20902in</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <BottomBorder>
+                                      <Style>Solid</Style>
+                                    </BottomBorder>
+                                    <BackgroundColor>LightGrey</BackgroundColor>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>1pt</PaddingLeft>
+                                    <PaddingRight>1pt</PaddingRight>
+                                    <PaddingTop>1pt</PaddingTop>
+                                    <PaddingBottom>1pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox2">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Name.Value</Value>
+                                          <Style>
+                                            <FontSize>12pt</FontSize>
+                                            <FontWeight>Bold</FontWeight>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox2</rd:DefaultName>
+                                  <Left>0.19098in</Left>
+                                  <Height>0.25in</Height>
+                                  <Width>2.20902in</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>1pt</PaddingLeft>
+                                    <PaddingRight>1pt</PaddingRight>
+                                    <PaddingTop>1pt</PaddingTop>
+                                    <PaddingBottom>1pt</PaddingBottom>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Textbox12">
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Fields!Type.Value</Value>
+                                          <Style>
+                                            <FontWeight>Bold</FontWeight>
+                                            <Color>=IIF(Fields!Type.Value = "Ripped", "White", "Black")</Color>
+                                          </Style>
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style>
+                                        <TextAlign>Center</TextAlign>
+                                      </Style>
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Textbox12</rd:DefaultName>
+                                  <Height>1.51in</Height>
+                                  <Width>0.19098in</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <RightBorder>
+                                      <Style>Solid</Style>
+                                    </RightBorder>
+                                    <BackgroundColor>=IIF(Fields!Type.Value = "Ripped", "Red", "LightBlue")</BackgroundColor>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>1pt</PaddingLeft>
+                                    <PaddingRight>1pt</PaddingRight>
+                                    <PaddingTop>1pt</PaddingTop>
+                                    <PaddingBottom>1pt</PaddingBottom>
+                                    <WritingMode>Vertical</WritingMode>
+                                  </Style>
+                                </Textbox>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Top>0.05in</Top>
+                              <Left>0.05in</Left>
+                              <Height>1.51in</Height>
+                              <Width>2.4in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <BackgroundColor>White</BackgroundColor>
+                              </Style>
+                            </Rectangle>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Height>1.61in</Height>
+                          <Width>2.5in</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>Black</BackgroundColor>
+                          </Style>
+                        </Rectangle>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <Height>1.625in</Height>
+        <Width>2.5in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>1.625in</Height>
+    <Style />
+  </Body>
+  <Width>2.53in</Width>
+  <Page>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.4in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
+    <Columns>3</Columns>
+    <ColumnSpacing>0in</ColumnSpacing>
+    <Style />
+  </Page>
+  <rd:ReportID>64f91f73-0ee0-4e6c-b6d8-21901fd95ef2</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>

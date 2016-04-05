@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Invaders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Invader Name="Firefly" Type="Regular">
+    <Powers>
+      <Power Name="Bioluminescence" StatName="Disruptor">
+        <Invader Keywords="Move, Melee, Collateral 1">Enemies in your sector take one damage and gain one On Fire Token.</Invader>
+        <Ripped Keywords="Standard, Collateral 1">Enemies in your sector take one damage.</Ripped>
+        <Slotted Keywords="Move, Collateral 1, 2, 3">Enemies in your sector take one damage.</Slotted>
+      </Power>
+      <Power Name="Flight" StatName="Operative">
+        <Invader>Flight</Invader>
+        <Ripped>Decorative wings.</Ripped>
+        <Slotted>You gain Flight.</Slotted>
+      </Power>
+      <Power Name="Cheap Shot" StatName="Tactician">
+        <Invader Keywords="Standard, Melee">Make an attack. The enemy takes a -3 penalty to the roll.</Invader>
+        <Ripped Keywords="Standard, Melee">Make an attack. Spend up to three tokens – the enemy takes a penalty to the roll equal to the number of tokens spent.</Ripped>
+        <Slotted Keywords="Standard, Melee">Make an attack. Spend any number of tokens – the enemy takes a penalty to the roll equal to the number of tokens spent.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="6" />
+    <Stat2 Name="Leader" Value="3" />
+    <Stat3 Name="Operative" Value="2" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>0</Power>
+  </Invader>
+  <Invader Name="Boomer Bee" Type="Vermin" VermHP="3" VermGroupLow="3" VermGroupHigh="4">
+    <Powers>
+      <Power Name="Boom!" StatName="Disruptor">
+        <FlavorText>If possible, fight these pests at range. Don’t bunch up. Boomers seem attracted to groups of SPN agents. This seems to be an adaptation of the “heat balling” effect displayed by regular bees, only far beyond 110 F.</FlavorText>
+        <Invader Keywords="Standard"> Spend one token. All enemies in your sector take one damage. You take three damage. </Invader>
+        <Ripped Keywords="Standard">Spend one token. All enemies in your sector take one damage. You take three damage. </Ripped>
+        <Slotted Keywords="Standard">Spend one token. All enemies in your sector take one damage. You take one damage. </Slotted>
+      </Power>
+      <Power Name="Boooooom!" StatName="Operative">
+        <FlavorText>Boomers are able to control their explosions, centering the blast on a specific target. While we advocate weaponizing the invaders, what kind of SPN agent would choose to explode? </FlavorText>
+        <Invader Keywords="Standard, Melee">Spend one token. An enemy in your sector takes three damage. You take three damage. </Invader>
+        <Ripped Keywords="Standard, Melee">Spend one token. An enemy in your sector takes three damage. You take four damage. </Ripped>
+        <Slotted Keywords="Standard, Melee">Spend one token. An enemy in your sector takes three damage. </Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="5" />
+    <Stat2 Name="Leader" Value="1" />
+    <Stat3 Name="Operative" Value="4" />
+    <Stat4 Name="Tactician" Value="1" />
+    <Power>0</Power>
+    <FlavorText>Invader bee hives seem to have multiple mutated workers. The worst and most dangerous we dub “Boomers”, for their tendency to explode. They are roughly the size of a car. Boomers do not possess a stinger, so rookie agents often believe they possess little threat compared to the others. Rookies don’t make that mistake twice.</FlavorText>
+  </Invader>
+  <Invader Name="Stinger Bee" Type="Vermin" VermHP="2" VermGroupLow="3" VermGroupHigh="4">
+    <Powers>
+      <Power Name="Bee Sting" StatName="Leader">
+        <FlavorText>The stinger’s poison is more dangerous than its stab. We speculate we might be able to synthesize the venom and filter it through the Bio-Armor, providing increased strength at the cost of the owner’s health. </FlavorText>
+        <Invader Keywords="Passive">When the Stinger deals damage, convert one of the enemy’s tokens into a Poison token. </Invader>
+        <Ripped Keywords="Minor">You may convert one token into a Poison token.</Ripped>
+        <Slotted Keywords="Standard, Melee">Make an attack. Convert one of your tokens into two Poison tokens.</Slotted>
+      </Power>
+      <Power Name="Worker Bee" StatName="Tactician">
+        <FlavorText>Stingers create new hives if left unchecked. In an interesting turn of events, agents can attach sections of the hive to their Bio-Armor. The bees inside do not appreciate loud noises and will swarm if provoked. </FlavorText>
+        <Invader Keywords="Standard">Place a Bee Hive field effect on the Stinger’s sector. (Bee Hive field effect: When anyone rolls a Collateral effect in this sector, place a swarm of three Stingers in this sector. These Stingers act on the next invader turn.) </Invader>
+        <Ripped Keywords="Reaction">When anyone triggers a Collateral effect, spend one token to reduce the damage you take from Collateral by one. </Ripped>
+        <Slotted Keywords="Reaction">When you take damage from a Collateral trigger, enemies in your sector take a point of damage.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="3" />
+    <Stat2 Name="Leader" Value="4" />
+    <Stat3 Name="Operative" Value="4" />
+    <Stat4 Name="Tactician" Value="1" />
+    <Power>0</Power>
+    <FlavorText>The more immediately threatening of the invader worker bees. Their stinger averages at five feet long. Some SPN agents collect these stingers as trophies or use them as weapons in battle.</FlavorText>
+  </Invader>
+  <Invader Name="Queen Bee" Type="Regular">
+    <Powers>
+      <Power Name="BEEEEES" StatName="Disruptor">
+        <FlavorText>While we’ve found evidence of invader hives, the queen bees seem capable of spawning new bees immediately. It’s a fascinating bit of spontaneous warfare and I can’t wait to implant it in one of the agents. </FlavorText>
+        <Invader Keywords="Standard">Spend four tokens. Place a swarm of three Boomers or Stingers in the Queen Bee’s sector; the swarm acts immediately.</Invader>
+        <Ripped Keywords="Passive">Two bee drones orbit your armor at all times. They can be used for cool narrative effects.</Ripped>
+        <Slotted Keywords="Passive">When you attack or are attacked, you can take one point of damage to deal one point of damage to the enemy.</Slotted>
+      </Power>
+      <Power Name="Flight" StatName="Operative">
+        <FlavorText>The queens will try to escape if they are outnumbered and unable to continue spawning new soldiers.</FlavorText>
+        <Invader Keywords="Passive">Flight</Invader>
+        <Ripped Keywords="Passive">Ornamental Bee wings.</Ripped>
+        <Slotted Keywords="Passive">Flight</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="5" />
+    <Stat2 Name="Leader" Value="4" />
+    <Stat3 Name="Operative" Value="2" />
+    <Stat4 Name="Tactician" Value="2" />
+    <Power>0</Power>
+    <FlavorText>As far as we can tell, the invaders are Earth insects (and other unsettling creatures) mutated or augmented, though they don’t always act exactly like their counterparts. Aside from rampaging through city streets we’ve found the bee invaders mimic the hive structure completely.</FlavorText>
+  </Invader>
+  <Invader Name="Centipede" Type="Regular">
+    <Powers>
+      <Power Name="Poison Mandibles" StatName="Disruptor">
+        <FlavorText>Do not let the centipede bite you. That is, unfortunately, the extent of our tactical advice at this time. The prospect of attaching these to a suit of Bio-Armor is intriguing. Perhaps attaching one to one of the arms? We’ll have to find a volunteer. </FlavorText>
+        <Invader Keywords="Passive"> When the Centipede damages an enemy, give that enemy a Poison token for each point of damage dealt. At the beginning of your turn, if you have any Poison tokens you take one damage. </Invader>
+        <Ripped Keywords="Standard, Melee, Wager 1">Make an attack against an enemy. If you roll an 8, 9, or 10 you win the Wager and gain two Poison tokens as well. </Ripped>
+        <Slotted Keywords="Standard, Melee, Wager 1">Make an attack against an enemy. If you have any Poison tokens and damage the enemy, you may spend up to three Poison tokens to deal an extra point of damage per token spent.  If you roll an 8, 9, or 10 you win the Wager and gain two Poison tokens as well.</Slotted>
+      </Power>
+      <Power Name="Hundreds of Legs" StatName="Tactician">
+        <FlavorText>Each leg is about the size of an adult human. There are one hundred of them. Ugh.</FlavorText>
+        <Invader Keywords="Move">Move one square, ignoring any field effects in the square you move into. </Invader>
+        <Ripped Keywords="Move">Spend three tokens. Move one square, ignoring any field effects in the square you move into.</Ripped>
+        <Slotted Keywords="Minor">Spend three tokens. Move one square, ignoring any field effects in the square you move into.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="4" />
+    <Stat2 Name="Leader" Value="3" />
+    <Stat3 Name="Operative" Value="4" />
+    <Stat4 Name="Tactician" Value="4" />
+    <Power>0</Power>
+    <FlavorText>Many of our agents are hesitant at first. The Bio-Armor process grants them the power to fight the invaders, but old fears and anxieties care nothing for physical prowess. This is most common with arachnid invaders. Even the bravest are unsettled to fight the centipedes. For good reason - these invaders are among the most dangerous. The clashing mandibles and hundreds of grasping legs don’t help.</FlavorText>
+  </Invader>
+  <Invader Name="Caterpillar" Type="Vermin" VermHP="3" VermGroupLow="3" VermGroupHigh="5">
+    <Powers />
+    <Stat1 Name="Disruptor" Value="3" />
+    <Stat2 Name="Leader" Value="3" />
+    <Stat3 Name="Operative" Value="3" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>0</Power>
+    <FlavorText>The swarms of caterpillars are no more than a nuisance. We’re not certain of their purpose among the invaders - perhaps an early experiment by whoever created them? Either way agents, feel free to deal with other threats first.</FlavorText>
+    <RulesText>If the Caterpillar swarm ever rolls a 9 or 10, replace the Caterpillar swarm with a Cocoon. The Cocoon is a new monster and does not retain any of the damage dealt to or effects on the Caterpillar swarm. The Cocoon does not act the round it enters play.</RulesText>
+  </Invader>
+  <Invader Name="Cocoon" Type="Regular">
+    <Powers>
+      <Power Name="Be the Change" StatName="Operative">
+        <FlavorText>Invaders seem invigorated in the presence of the cocoon. It’s as if they know what comes next.</FlavorText>
+        <Invader Keywords="Standard">Spend two tokens. Target ally in any sector gets +3 to its next roll. </Invader>
+        <Ripped Keywords="Standard">Spend two tokens. Target ally in any sector gets +3 to its next roll.</Ripped>
+        <Slotted Keywords="Minor">Spend four tokens. Target ally in any sector gets +3 to its next roll.</Slotted>
+      </Power>
+      <Power Name="Passive Resistance" StatName="Tactician">
+        <FlavorText>The cocoon itself is not dangerous. If dealt with quickly, agents may be able to prevent the emergence. </FlavorText>
+        <Invader Keywords="Passive">If the Cocoon would deal more than 1 damage, it instead deals 1 damage.</Invader>
+        <Ripped Keywords="Passive">If you would deal more than 1 damage, you instead deal 1 damage. </Ripped>
+        <Slotted Keywords="Passive">When you trigger Collateral, you do not take damage. (Your allies still do, of course, and you still take damage when other players trigger Collateral)</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="1" />
+    <Stat2 Name="Leader" Value="1" />
+    <Stat3 Name="Operative" Value="3" />
+    <Stat4 Name="Tactician" Value="6" />
+    <Power>0</Power>
+    <FlavorText>Oh, were we ever wrong. Agents, do not let the caterpillars live. This intermediary stage is a sign of far worse things to come.</FlavorText>
+    <RulesText>The Coccoon may defend, but not attack. When the Cocoon spends four tokens, it transforms into a Butterfly, heals all damage and all enemies in the Cocoon’s sector take two damage.
+</RulesText>
+  </Invader>
+  <Invader Name="Butterfly" Type="Regular">
+    <Powers>
+      <Power Name="Pollen Missile" StatName="Disruptor">
+        <FlavorText>We do not know how it creates them, but these blasts of pollen are exceptionally dangerous. We request an agent return with an intact specimen if at all possible. </FlavorText>
+        <Invader Keywords="Standard, Ranged, Collateral 1, 2">Deal one damage to all enemies in an adjacent sector. Give each enemy a Poison token. At the beginning of your turn, if you have any Poison tokens you take one damage. </Invader>
+        <Ripped Keywords="Standard, Ranged, Collateral 1">Deal one damage to all enemies in an adjacent sector.</Ripped>
+        <Slotted Keywords="Standard, Ranged, Collateral 1, 2">Deal one damage to all enemies in an adjacent sector. You may spend up to two Poison tokens to deal one more damage per Poison token spent.</Slotted>
+      </Power>
+      <Power Name="Flight" StatName="Leader">
+        <FlavorText>The butterfly’s flight is part of what makes it such a threat. Agents without wings of their own must resort to leaping off tall buildings or otherwise grounding the creature to effectively combat it. As much as I’d like to pin these up in glass, our research indicates the wings can be easily grafted to the Bio-Armor. </FlavorText>
+        <Invader Keywords="Passive">Flight</Invader>
+        <Ripped Keywords="Passive">Ornamental Butterfly wings. You can’t fly but they look pretty. </Ripped>
+        <Slotted Keywords="Passive">Flight</Slotted>
+      </Power>
+      <Power Name="Chaos Theory" StatName="Tactician">
+        <FlavorText>A butterfly in downtown San Antonio flaps its wings. The tornado happens immediately.</FlavorText>
+        <Invader Keywords="Standard, Wager 2">On a 9 or 10, all enemies in a row of sectors are pushed one sector away and take two damage.</Invader>
+        <Ripped Keywords="Standard, Wager 3">Enemies in a row of sectors take one damage. If you roll a 10, all enemies in a row of sectors are instead pushed one sector away and take two damage.</Ripped>
+        <Slotted Keywords="Standard, Wager 2">All enemies in one row of sectors take one damage and are pushed one sector away. On a 9 or 10, all enemies in a row of sectors are instead pushed one sector away and take two damage.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="4" />
+    <Stat2 Name="Leader" Value="4" />
+    <Stat3 Name="Operative" Value="6" />
+    <Stat4 Name="Tactician" Value="6" />
+    <Power>0</Power>
+    <FlavorText>It emerges from the cocoon forcefully enough to damage its surroundings, destroying an entire city block. The butterfly is almost large enough to deserve G Status. Agents, consider this your first priority.</FlavorText>
+  </Invader>
+  <Invader Name="Giant Earthworms" Type="Vermin" VermHP="3" VermGroupLow="3" VermGroupHigh="5">
+    <Powers>
+      <Power Name="Earth(worm)quake" StatName="Disruptor">
+        <FlavorText>A few days before the resurgence of the invaders, civilians complained about the earth shaking in locations that have never before seen an earthquake. Now we know why.</FlavorText>
+        <Invader Keywords="Standard">Spend two tokens. Place the Giant Earthworms in any sector; all enemies in that sector take 1 damage.</Invader>
+        <Ripped Keywords="Standard, Melee">Spend two tokens. All enemies in your sector take one damage.</Ripped>
+        <Slotted Keywords="Standard, Wager 2">Deal one damage to enemies in your sector. On a 1 or 2, you win your Wager and instead move that many sectors. Deal one damage to each enemy in any sector you move through. </Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="3" />
+    <Stat2 Name="Leader" Value="1" />
+    <Stat3 Name="Operative" Value="5" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>0</Power>
+    <FlavorText>Even the lowliest of creatures rise up, ten feet tall, ready to attack. The worms are a one trick pony, but they do that trick very well.</FlavorText>
+  </Invader>
+  <Invader Name="Cargo Toad" Type="Vermin" VermHP="8" VermGroupLow="1" VermGroupHigh="1">
+    <Powers>
+      <Power Name="Ribbit" StatName="Tactician">
+        <FlavorText>A Cargo Toad’s sole purpose is to hop throughout the battle, dropping off groups of smaller toad invaders. “Smaller” in relative terms, of course - they are the size of a small car, compared to the Cargo Toad’s department store. </FlavorText>
+        <Invader Keywords="Standard">Spend a token. Drop four Baby Toads onto the battlefield in the Cargo Toad’s sector. They may immediately take a turn.</Invader>
+        <Ripped Keywords="Passive">Two frog drones orbit you at all times. They can be used for cool narrative effects. </Ripped>
+        <Slotted Keywords="Passive">Two frog drones orbit you at all times. They can be used for cool narrative effects. When you attack with the slotted stat, if you roll a 1 or 2 and still deal damage you deal one extra damage.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="2" />
+    <Stat2 Name="Leader" Value="2" />
+    <Stat3 Name="Operative" Value="1" />
+    <Stat4 Name="Tactician" Value="4" />
+    <Power>0</Power>
+    <FlavorText>A number of invaders are able to deploy new combatants during battle. None are worse than the creature we call the Cargo Toad, a highly mobile transport invader. I know I’ve said this in other writeups but I mean it: make these invaders your first priority.</FlavorText>
+    <RulesText>The Cargo Toad gets two move actions per turn.</RulesText>
+  </Invader>
+  <Invader Name="Baby Toad" Type="Vermin" VermHP="1" VermGroupLow="4" VermGroupHigh="4">
+    <Powers />
+    <Stat1 Name="Disruptor" Value="4" />
+    <Stat2 Name="Leader" Value="4" />
+    <Stat3 Name="Operative" Value="4" />
+    <Stat4 Name="Tactician" Value="4" />
+    <Power>1</Power>
+  </Invader>
+  <Invader Name="Komodo Lizard Warrior" Type="Regular">
+    <Powers>
+      <Power Name="Bacteria Mouth" StatName="Disruptor">
+        <FlavorText>It’s unsettling that an agent can infest their own Bio-Armor with the bacterial process from the komodo lizard’s mouth and somehow turn it into increased power. </FlavorText>
+        <Invader Keywords="Standard, Attack, Drop d10">Make an attack. If the enemy takes damage, it loses two tokens and gains two Bacteria tokens. While you have a Bacteria token, you can’t gain any other tokens other than Bacteria tokens, and can’t spend non-Bacteria tokens. 
+When the Komodo Lizard Warrior’s Disruptor becomes 0, the enemy who brought the stat to 0 loses two tokens and gains two Bacteria tokens. </Invader>
+        <Ripped Keywords="Standard, Attack, Drop d10">Make an attack. Whether you win or lose, deal one extra point of damage to the enemy. </Ripped>
+        <Slotted Keywords="Standard, Attack, Drop d10">Make an attack. If you deal damage, you deal an additional point of damage and gain one token.</Slotted>
+      </Power>
+      <Power Name="Big Freaking Lizard" StatName="Leader">
+        <FlavorText>Despite the Bio-Armor’s physical properties, even our strongest agents can’t stand up against the komodo in single combat. Yes, that is a challenge to the agent reading this right now. You, personally. Prove us wrong. </FlavorText>
+        <Invader Keywords="Passive">The Komodo Lizard Warrior can’t be moved unless it chooses to move.</Invader>
+        <Ripped Keywords="Reaction">When you are forced to move, you may spend three tokens to negate that movement. </Ripped>
+        <Slotted Keywords="Passive">When you are forced to move, you may spend a token to negate that movement. </Slotted>
+      </Power>
+      <Power Name="A Little More Pressure" StatName="Tactician">
+        <FlavorText>We haven’t had an intact specimen to study, but I’m almost certain the komodo invader has mechanical augmentation in its jaws. Be a dear and rip one out. </FlavorText>
+        <Invader Keywords="Reaction">When the Komodo Lizard Warrior deals damage, it deals an extra point of damage. The damaged enemy gains two Bacteria tokens.</Invader>
+        <Ripped Keywords="Reaction">When you deal damage with a Melee attack, deal an extra point of damage. </Ripped>
+        <Slotted Keywords="Reaction">When you deal damage with a Melee attack, deal an extra point of damage or add two tokens to the Director Token Pool.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="2" />
+    <Stat2 Name="Leader" Value="6" />
+    <Stat3 Name="Operative" Value="5" />
+    <Stat4 Name="Tactician" Value="2" />
+    <Power>0</Power>
+    <FlavorText>We once thought these were the largest of the giant lizards, though we know better now. (See “Supplemental - G Status Collection”.) Despite the filtration systems included in the Bio-Armor process, the bite of a komodo lizard invader is able to bypass most of our protections. We’re not happy about that.</FlavorText>
+  </Invader>
+  <Invader Name="Chameleon" Type="Regular">
+    <Powers>
+      <Power Name="Camouflage" StatName="Operative">
+        <FlavorText>We once had a swarm of these things latch on to the Bastion and wait until we were in the air to attack. Completely invisible. The Bastion was equipped to handle that kind of thing, but it was still an unpleasant surprise. </FlavorText>
+        <Invader Keywords="Passive">The Chameleon takes no damage from attacks with the Ranged keyword. </Invader>
+        <Ripped Keywords="Reaction">When you take damage from an attack with the Ranged keyword, pay three tokens to reduce the damage by one. </Ripped>
+        <Slotted Keywords="Passive">When you take damage from an attack with the Ranged keyword, take one less damage (to a minimum of 1). </Slotted>
+      </Power>
+      <Power Name="A Really Long Tongue" StatName="Tactician">
+        <FlavorText>Once it’s in a good position, the chameleon lashes out with its tongue and draws in its prey. We once saw a chameleon invader ingest an entire cow. </FlavorText>
+        <Invader Keywords="Standard, Ranged">Select an enemy in any sector. Move that enemy into your sector (through the most direct path). The enemy takes 1 damage for every sector they move through. </Invader>
+        <Ripped Keywords="Standard, Ranged, Drop d10">Make an attack against an enemy in an adjacent sector. If you deal damage, move them into your sector. </Ripped>
+        <Slotted Keywords="Standard,  Ranged, Drop d10">Make an attack against an enemy in any sector. If you deal damage, move that enemy into your sector (through the most direct path). The enemy takes 1 extra damage for every sector they move through.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="1" />
+    <Stat2 Name="Leader" Value="1" />
+    <Stat3 Name="Operative" Value="7" />
+    <Stat4 Name="Tactician" Value="5" />
+    <Power>0</Power>
+    <FlavorText>The chameleon invader is another example of a mutation altering the natural capabilities of an Earth creature. The creature’s natural camouflage property becomes full on invisibility.</FlavorText>
+  </Invader>
+  <Invader Name="Terragator" Type="Regular">
+    <Powers>
+      <Power Name="Noxious Fumes" StatName="Disruptor">
+        <FlavorText>The fumes kill all vegetation and small animals they touch. Since this thing only attacks cities it’s not much of an issue. Fumes probably aren’t good for people either though.</FlavorText>
+        <Invader Keywords="Minor">Spend two tokens to deal a point of damage to all enemies in the Terragator sector. </Invader>
+        <Ripped Keywords="Minor">Spend four tokens to deal a point of damage to all enemies in your sector</Ripped>
+        <Slotted Keywords="Minor">Spend three tokens to deal a point of damage to all enemies in your sector. </Slotted>
+      </Power>
+      <Power Name="Enormous Jaws" StatName="Leader">
+        <FlavorText>You ever watch that show with the guy who wrestled alligators? Think about how hard those things could bite. Now imagine it’s as big as a grocery store and mutated by some kind of outer space nonsense. I want to attach it to some Bio-Armor and see what happens. </FlavorText>
+        <Invader Keywords="Standard, Ranged, Wager 3">Deal two points of damage to an enemy in your sector or an adjacent sector. If you roll a 10, instead deal five points of damage to an enemy in your sector or an adjacent sector. </Invader>
+        <Ripped Keywords="Standard, Melee, Wager 3">Deal two points of damage to an enemy in your sector. If you roll a 10, instead deal four points of damage to an enemy in your sector. </Ripped>
+        <Slotted Keywords="Passive">When you make an attack roll with the Slotted stat, add three to your total. </Slotted>
+      </Power>
+      <Power Name="Crud Vapors" StatName="Operative">
+        <FlavorText>I genuinely hope the agents are mature enough to avoid obvious jokes when we implant the creature’s gas production glands.</FlavorText>
+        <Invader Keywords="Minor, Field Effect">Spend two tokens to create a Crud Vapors Field Effect in an adjacent sector. (Crud Vapors effect: Passive. Enemies who begin their turn in Crud Vapors gain one Poison token, then lose one regular token. If you begin your turn with any Poison tokens, you take one damage.) While this power is active, the Terragator takes no damage from Poison tokens.</Invader>
+        <Ripped Keywords="Standard">Spend three tokens to create a Crud Vapors field effect in your sector.</Ripped>
+        <Slotted Keywords="Minor">Spend two tokens to create a Crud Vapors field effect in your sector.</Slotted>
+      </Power>
+      <Power Name="Tail Swipe" StatName="Disruptor">
+        <FlavorText>For G-Status invaders, or those close to it, climbing the creature is an effective combat tactic. Good thing too, that kind of stuff makes for solid ratings. </FlavorText>
+        <Invader Keywords="Standard, Ranged">Spend three tokens to deal a point of damage to all enemies in all adjacent sectors (except the Terragator sector). One enemy on the Terragator sector may use a Reaction to make a Standard action attack. </Invader>
+        <Ripped Keywords="Standard, Melee">Spend two tokens to deal a point of damage to all enemies in your sector. </Ripped>
+        <Slotted Keywords="Standard, Ranged">Spend three tokens to deal a point of damage to all enemies in your sector and an adjacent sector.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="4" />
+    <Stat2 Name="Leader" Value="5" />
+    <Stat3 Name="Operative" Value="1" />
+    <Stat4 Name="Tactician" Value="2" />
+    <Power>1</Power>
+    <FlavorText>Straight out of a cable made for TV movie. We’ve heard reports of this enormous alligator but no confirmed sightings. Any information in this packet is purely speculative. If the agents can bring in a specimen, I guarantee there will be a nice bonus waiting. If the public can be believed, this creature (please stop calling it the “Terragator”, I don’t want that name to stick) emits noxious fumes at all times. It’s also about the size of a building. At least we’ll see it coming, if it exists. This creature is just short of G-Status.</FlavorText>
+    <RulesText>When a Terragator is in play, add a special “Terragator” sector on the board. This sector is considered adjacent to all sectors adjacent to the Terragator. When someone attacks the Terragator from this sector, the Terragator takes one extra point of damage from a successful attack. The Terragator sector always has a Crud Vapors field effect.</RulesText>
+  </Invader>
+  <Invader Name="Fire Salamander" Type="Regular">
+    <Powers>
+      <Power Name="Rolling Flames" StatName="Disruptor">
+        <FlavorText>The salamanders spew fire through a process we don’t totally understand yet. I’d love to inspect an intact specimen but something about them brings out the dragon slayer in our agents.</FlavorText>
+        <Invader Keywords="Standard">Spend two tokens. Select a row of sectors. Enemies and allies in that row of sectors take one damage.</Invader>
+        <Ripped Keywords="Standard, Ranged, Collateral (1, 2)">An enemy in an adjacent sector takes two damage. </Ripped>
+        <Slotted Keywords="Standard, Ranged, Collateral (1, 2, 3)">Select a row of sectors. Enemies and allies in that row of sectors take one damage.</Slotted>
+      </Power>
+      <Power Name="Ambient Heat" StatName="Tactician">
+        <FlavorText>The fueling system in the Flying Bio-Armor Fortress Bastion (what an overwrought name) uses something similar to the salamander’s ability to produce intense heat. </FlavorText>
+        <Invader Keywords="Passive">At the beginning of the Fire Salamander’s turn, all enemies in its sector take one damage. </Invader>
+        <Ripped Keywords="Passive">You’re always warm and comfortable. How convenient. </Ripped>
+        <Slotted Keywords="Minor">Spend three tokens to deal one damage to all enemies in your sector.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="5" />
+    <Stat2 Name="Leader" Value="3" />
+    <Stat3 Name="Operative" Value="1" />
+    <Stat4 Name="Tactician" Value="4" />
+    <Power>0</Power>
+    <FlavorText>The insect invaders are rough, but it’s the lizards that are the biggest threat. Where do these things come from?  Is it some kind of manifestation of collective unconscious, a reaction to our viewing of awful B-movie monster horror? We’re looking into that.</FlavorText>
+    <RulesText>The Fire Salamander takes no damage from Rolling Flames attacks.</RulesText>
+  </Invader>
+  <Invader Name="Shield Beetle" Type="Vermin" VermHP="1" VermGroupLow="7" VermGroupHigh="8">
+    <Powers>
+      <Power Name="Shield Wall" StatName="Leader">
+        <FlavorText>They’ll protect higher priority targets if given the opportunity.  Don’t give them that opportunity. </FlavorText>
+        <Invader Keywords="Passive">When an enemy in the Shield Beetle’s sector takes damage, negate that damage. The Shield Beetle swarm takes that damage instead.</Invader>
+        <Ripped Keywords="Passive">When an ally in your sector takes damage, negate that damage. You take that damage instead. </Ripped>
+        <Slotted Keywords="Reaction">When an enemy attacks the Slotted stat, spend two tokens to reduce their roll by three. </Slotted>
+      </Power>
+      <Power Name="Rolling Charge" StatName="Tactician">
+        <FlavorText>A line of these invaders, all charging at full speed, is a terrifying thing. </FlavorText>
+        <Invader Keywords="Standard, Collateral (X)">Move one, two, or three sectors. This attack is Collateral 1 for one sector, Collateral 1, 2 for two sectors, Collateral 1, 2, 3 for three sectors. Deal one point of damage to all enemies in your sector.</Invader>
+        <Ripped Keywords="Standard, Collateral (X)">Move one or two sectors. This attack is Collateral 1, 2 for one sector and Collateral 1, 2, 3 for two sectors. Deal one point of damage to all enemies in your sector. </Ripped>
+        <Slotted Keywords="Standard, Collateral (X)">Move one, two, or three sectors. This attack is Collateral 1 for one sector, Collateral 1, 2 for two sectors, Collateral 1, 2, 3 for three sectors. Deal one point of damage to all enemies in your sector.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="2" />
+    <Stat2 Name="Leader" Value="5" />
+    <Stat3 Name="Operative" Value="1" />
+    <Stat4 Name="Tactician" Value="4" />
+    <Power>0</Power>
+    <FlavorText>These beetles have hard shells to provide their allies protection. Unlike most cover, they run at high speeds and charge into battle.</FlavorText>
+  </Invader>
+  <Invader Name="Scarab Bomber" Type="Vermin" VermHP="5" VermGroupLow="1" VermGroupHigh="1">
+    <Powers>
+      <Power Name="Disruptor" StatName="Disruptor">
+        <FlavorText>Between the explosions and what might be a rudimentary force field it’s difficult to fight the scarab from up close. Swarm tactics work, if you can trick a friend or two into absorbing some hits.</FlavorText>
+        <Invader Keywords="Reaction">When an enemy moves into the Scarab Beetle’s sector, spend three tokens. That enemy takes two damage and is pushed into an adjacent sector.</Invader>
+        <Ripped Keywords="Standard, Collateral (1)">Make an attack against an enemy. You also push them into an adjacent sector. </Ripped>
+        <Slotted Keywords="Reaction">When an enemy moves into your sector, spend three tokens. That enemy takes one damage and is pushed into an adjacent sector. </Slotted>
+      </Power>
+      <Power Name="Reinforcements" StatName="Operative">
+        <FlavorText>It takes a little while for a new scarab to grow. A desperate agent can reach into the pod and ingest a portion of it to both stop the growth and replenish their energy.</FlavorText>
+        <Invader Keywords="Minor">Spend three tokens to place a Reinforcements field effect in an adjacent sector. (Reinforcements effect: Passive. At the beginning of each round, this effect gains one token. When it gains three tokens, another Scarab Bomber appears and the field effect disappears. Anyone can end this field effect by spending a Standard action in the field  effect’s sector; when they do, they gain all tokens placed so far.)</Invader>
+        <Ripped Keywords="Passive">Scarab Drones hover around you at all times and can be used for cool narrative effects.</Ripped>
+        <Slotted Keywords="Passive">Scarab Drones hover around you at all times and can be used for cool narrative effects. When you make an attack with the Slotted stat and roll doubles you gain one token.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="5" />
+    <Stat2 Name="Leader" Value="3" />
+    <Stat3 Name="Operative" Value="1" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>1</Power>
+    <FlavorText>The scarabs often appear alongside the shielded beetles. They fly over the battlefield, dropping explosive blasts at regular intervals. Scarabs also drop pods that, eventually, will release another scarab into the air.</FlavorText>
+    <RulesText>The Scarab Bomber has Flight.</RulesText>
+  </Invader>
+  <Invader Name="Cricket Assault Force" Type="Vermin" VermHP="2" VermGroupLow="3" VermGroupHigh="4">
+    <Powers>
+      <Power Name="Symphony of the Might" StatName="Disruptor">
+        <FlavorText>When all of the crickets begin their song, duck and cover. The debris they kick up will make every action a gamble. </FlavorText>
+        <Invader Keywords="Standard, Ranged, Collateral (1, 2)">All enemies in an adjacent sector take one damage and gain a Collateral token. While an enemy has a Collateral token, all of their rolls gain Collateral (1).</Invader>
+        <Ripped Keywords="Standard, Melee, Collateral (1)">All enemies in your sector take one damage.</Ripped>
+        <Slotted Keywords="Standard, Ranged, Wager 2">All enemies in your sector or an adjacent sector take one damage. If you roll a 1 or 2 select one enemy in that sector to take two extra damage. </Slotted>
+      </Power>
+      <Power Name="Harm of Dissonance" StatName="Operative">
+        <FlavorText>The worst part is, they won’t stay in one place. The destruction they cause doesn’t slow them in the slightest.</FlavorText>
+        <Invader Keywords="Standard, Ranged, Collateral (1)">Move to an adjacent sector. Make an attack against an enemy in an adjacent sector.</Invader>
+        <Ripped Keywords="Standard, Ranged, Collateral (1)">Make an attack against an enemy in an adjacent sector. </Ripped>
+        <Slotted Keywords="Standard, Ranged, Collateral (1)">Move to an adjacent sector. Make an attack against an enemy in an adjacent sector.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="8" />
+    <Stat2 Name="Leader" Value="2" />
+    <Stat3 Name="Operative" Value="2" />
+    <Stat4 Name="Tactician" Value="2" />
+    <Power>0</Power>
+    <FlavorText>These crickets are an excellent example of invaders not performing quite like their Earth analogue. A swarm of crickets lets out a deafening cry and annihilates a city block, before leaping to the next and continuing in the process. They revel in destruction and debris.</FlavorText>
+  </Invader>
+  <Invader Name="Weaver" Type="Vermin" VermHP="3" VermGroupLow="3" VermGroupHigh="5">
+    <Powers>
+      <Power Name="Web Slam" StatName="Disruptor">
+        <FlavorText>Arachnid invaders truly do whatever a spider can; we have, in fact, seem them spin a web of any size and catch civilians just like flies.</FlavorText>
+        <Invader Keywords="Minor, Melee">Push an enemy into an adjacent sector. That enemy gains a Webbed token. Until they spend this token, they can’t move.</Invader>
+        <Ripped Keywords="Standard, Melee">Push an enemy into an adjacent sector. That enemy takes 1 damage. </Ripped>
+        <Slotted Keywords="Minor, Melee">Push an enemy into an adjacent sector.</Slotted>
+      </Power>
+      <Power Name="Wall Crawl" StatName="Operative">
+        <FlavorText>They don’t swing from a web of any size, but you should absolutely take a look overhead. These invaders can crawl up walls.</FlavorText>
+        <Invader Keywords="Passive">You stick to buildings, crawl up surfaces. Spiders are all kinds of adhesive.</Invader>
+        <Ripped Keywords="Passive">Your armor grows little hairs and hooked attachments. It looks menacing, but doesn’t do much.</Ripped>
+        <Slotted Keywords="Passive">You stick to buildings, crawl up surfaces. You’re all kinds of adhesive. </Slotted>
+      </Power>
+      <Power Name="Skitter and Leap!" StatName="Tactician">
+        <FlavorText>Also, they jump at your face without any warning. This isn’t a reference - they really do that.</FlavorText>
+        <Invader Keywords="Standard, Melee">Select an enemy in an adjacent sector. Move into that enemy’s sector. Spend a number of tokens equal to the Weavers remaining in the swarm; the enemy takes that much damage.</Invader>
+        <Ripped Keywords="Standard, Melee">Move into an adjacent sector. Make an attack against an enemy in that sector. </Ripped>
+        <Slotted Keywords="Standard, Melee">Move into an adjacent sector. Make an attack against an enemy in that sector. You may spend tokens after your roll to increase your total by 1 for every token spent.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="3" />
+    <Stat2 Name="Leader" Value="1" />
+    <Stat3 Name="Operative" Value="4" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>0</Power>
+    <FlavorText>We test candidates thoroughly for any field liabilities, phobias included. Arachnophobia is a common one. We have therapy and hypnosis and all kinds of methods to combat this, but some soldiers find in-field practices most effective. There’s something therapeutic about blowing up the big spiders.</FlavorText>
+  </Invader>
+  <Invader Name="The Crusher" Type="Regular">
+    <Powers>
+      <Power Name="Wrecking Claw" StatName="Leader">
+        <FlavorText>The Crusher’s larger claw is attached by some kind of chain and propelled by an explosion we can’t quite replicate. It’s capable of causing mass destruction of an entire city block. (Or our agents.) </FlavorText>
+        <Invader Keywords="Standard, Ranged">Spend four tokens. All enemies in an adjacent sector take one damage. Place a Wrecked Field Effect in that sector. A sector may have multiple Wrecked field effects. 
+(Wrecked Field Effect: Passive. All attacks in this sector gain Collateral 1. Attacks with existing Collateral effects add an additional, sequential number - Collateral 1 2 3 becomes Collateral 1 2 3 4. Add an additional Collateral number for each additional Wrecked field effect.) </Invader>
+        <Ripped Keywords="Standard, Ranged, Collateral (1, 2)">All enemies in an adjacent sector take one damage. </Ripped>
+        <Slotted Keywords="Standard, Ranged, Collateral (1, 2)">All enemies in an adjacent sector take one damage. If you trigger the Collateral effect, the enemies take an additional amount of damage equal to the number that triggered Collateral.</Slotted>
+      </Power>
+      <Power Name="Crab Shell" StatName="Operative">
+        <FlavorText>It should come as no surprise that the shell’s hard to crack. We caught a lucky break in having a smaller crab frame already present in the initial invasion because I’m not sure we’ll ever work with this one.</FlavorText>
+        <Invader Keywords="Passive">Reduce all damage The Crusher takes by one. </Invader>
+        <Ripped Keywords="Reaction">When you are attacked and would take damage, spend five tokens to reduce the damage by one.</Ripped>
+        <Slotted Keywords="Reaction">When you are attacked and would take damage, spend three tokens to reduce the damage by one.</Slotted>
+      </Power>
+      <Power Name="Crushing Claw" StatName="Tactician">
+        <FlavorText>The larger claw is dangerous enough to disrupt the inner workings of the Bio-Armor and implanted technology.</FlavorText>
+        <Invader Keywords="Standard, Melee">Make an attack against an enemy. That enemy gains a Crushed token. While an enemy has a Crushed token, they can’t use powers that require Wagers. </Invader>
+        <Ripped Keywords="Standard, Melee, Wager 2">Make an attack against an enemy. If you roll a 1 or 2, the enemy takes that much damage.</Ripped>
+        <Slotted Keywords="Standard, Melee, Wager 1">Make an attack against an enemy. If you roll a 1, 2, or 3 the enemy takes that much damage.</Slotted>
+      </Power>
+    </Powers>
+    <Stat1 Name="Disruptor" Value="2" />
+    <Stat2 Name="Leader" Value="5" />
+    <Stat3 Name="Operative" Value="2" />
+    <Stat4 Name="Tactician" Value="3" />
+    <Power>0</Power>
+    <FlavorText>The invader known as The Crusher is another near-G Status. It’s also a sign of a disturbing trend in invaders; the others are dangerous, sure, but this one seems deliberately weaponized. Who’s doing this? Where do the invaders come from? At any rate, this is an angry fiddler crab. All invaders seem attracted to attacking the Bio-Armor candidates (for obvious reasons) but The Crusher actually seems to revel in destruction. Crack it wide open, agents.</FlavorText>
+  </Invader>
+</Invaders>

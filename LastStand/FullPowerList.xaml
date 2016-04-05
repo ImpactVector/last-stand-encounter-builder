@@ -1,0 +1,35 @@
+﻿<Window x:Class="LastStand.FullPowerList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Full Power List" Height="500" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DataGrid Grid.RowSpan="9" SelectionUnit="FullRow" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Path=Powers}" SelectedItem="{Binding Path=CurrentPower}" SelectionMode="Single" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Invader" Binding="{Binding InvaderName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="1" Grid.Row="1" Content="&gt;&gt;" Tag="AddEnc"  Click="Item_Click" />
+        <Button Grid.Column="1" Grid.Row="3" Content="&lt;&lt;" Tag="RemEnc" Click="Item_Click" />
+        <Button Grid.Column="1" Grid.Row="5" Content="Print" Tag="PrintEnc" Click="Item_Click" />
+        <Button Grid.Column="1" Grid.Row="7" Content="Clear All" Tag="ClearEnc" Click="Item_Click" />
+        <ListBox Grid.Column="2" Grid.RowSpan="9"  DisplayMemberPath="Power.Name" ItemsSource="{Binding Path=PrintPowers}" SelectedItem="{Binding Path=CurrentPrintPower}" SelectionMode="Single" />
+    </Grid>
+</Window>
